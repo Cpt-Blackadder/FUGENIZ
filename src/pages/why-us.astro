@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const usps = [
+  {
+    icon: null,
+    title: 'Fugen Intelligence (FI)',
+    description: 'Real-time learning and explainability that makes AI transparent and trustworthy.',
+    features: ['Real-time Learning', 'Explainable AI', 'Transparent Decisions', 'Continuous Improvement'],
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: 'users',
+    title: 'Dual Expertise',
+    description: 'Deep IT knowledge combined with industry domain expertise for comprehensive solutions.',
+    features: ['Technical Excellence', 'Domain Knowledge', 'Industry Experience', 'Best Practices'],
+    color: 'from-green-500 to-green-600'
+  },
+  {
+    icon: 'target',
+    title: 'Customized Solutions',
+    description: 'Tailored approaches designed specifically for your business needs and challenges.',
+    features: ['Personalized Approach', 'Scalable Design', 'Future-proof Architecture', 'Ongoing Support'],
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    icon: 'globe',
+    title: 'Global Delivery',
+    description: 'Worldwide presence with local expertise and 24/7 support across time zones.',
+    features: ['Global Reach', 'Local Expertise', '24/7 Support', 'Multi-timezone Coverage'],
+    color: 'from-orange-500 to-orange-600'
+  }
+];
+
+const benefits = [
+  {
+    metric: '60%',
+    label: 'Cost Reduction',
+    description: 'Average cost savings through automation and optimization',
+    icon: 'trending-up',
+    color: 'from-green-500 to-green-600'
+  },
+  {
+    metric: '3x',
+    label: 'Faster Implementation',
+    description: 'Reduced time to market with our proven methodologies',
+    icon: 'clock',
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    metric: '95%',
+    label: 'Success Rate',
+    description: 'Project success rate across all implementations',
+    icon: 'award',
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    metric: '24/7',
+    label: 'Support Coverage',
+    description: 'Round-the-clock technical support and monitoring',
+    icon: 'shield',
+    color: 'from-orange-500 to-orange-600'
+  }
+];
+
+const testimonials = [
+  {
+    content: "Fugeniz delivered results that exceeded our expectations. Their FI technology is truly revolutionary.",
+    author: "Sarah Johnson",
+    position: "CTO, TechFlow Solutions",
+    rating: 5,
+    image: "/assets/avatars/sarah-johnson.jpg"
+  },
+  {
+    content: "The combination of technical expertise and industry knowledge sets Fugeniz apart from the competition.",
+    author: "Michael Chen",
+    position: "Operations Director, Global Trade Corp",
+    rating: 5,
+    image: "/assets/avatars/michael-chen.jpg"
+  },
+  {
+    content: "Working with Fugeniz has transformed our business operations and given us a competitive edge.",
+    author: "Emma Rodriguez",
+    position: "Head of Digital Transformation, Retail Innovations",
+    rating: 5,
+    image: "/assets/avatars/emma-rodriguez.jpg"
+  }
+];
+---
+
+<Layout title="Why Choose Fugeniz" description="Discover what makes us the preferred partner for businesses seeking intelligent, transformative solutions.">
+  <Navbar />
+  
+  <main class="min-h-screen pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center animate-fade-up">
+          <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+            Why Choose{' '}
+            <span class="gradient-text">Fugeniz</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Discover what makes us the preferred partner for businesses seeking 
+            intelligent, transformative solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- USPs Section -->
+    <section class="py-20 bg-dark-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Our{' '}
+            <span class="gradient-text">Competitive Edge</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Four key differentiators that set us apart in the AI and technology landscape.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {usps.map((usp, index) => (
+            <div class="card group animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-gradient-to-r ${usp.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                {!usp.icon ? (
+                  <img src="/assets/vite.svg" alt="Fugeniz Logo" class="w-8 h-8 object-contain" />
+                ) : usp.icon === 'users' ? (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  </svg>
+                ) : usp.icon === 'target' ? (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                ) : (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                )}
+              </div>
+              
+              <h3 class="text-2xl font-bold text-white mb-4">{usp.title}</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">{usp.description}</p>
+              
+              <ul class="space-y-2">
+                {usp.features.map((feature) => (
+                  <li class="flex items-center text-gray-300">
+                    <svg class="w-5 h-5 text-primary-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-dark-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Measurable{' '}
+            <span class="gradient-text">Benefits</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Real results and tangible improvements our clients experience.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          {benefits.map((benefit, index) => (
+            <div class="card text-center animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-gradient-to-r ${benefit.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                {benefit.icon === 'trending-up' ? (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                  </svg>
+                ) : benefit.icon === 'clock' ? (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                ) : benefit.icon === 'award' ? (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                ) : (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                )}
+              </div>
+              <div class="text-3xl font-bold text-white mb-2">{benefit.metric}</div>
+              <h3 class="text-xl font-semibold text-white mb-2">{benefit.label}</h3>
+              <p class="text-gray-400">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-dark-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Client{' '}
+            <span class="gradient-text">Testimonials</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Hear what our clients have to say about their experience working with us.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div class="card text-center animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+              <div class="mb-6">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img src={testimonial.image} alt={testimonial.author} class="w-full h-full object-cover" />
+                </div>
+                <div class="flex justify-center mb-4">
+                  {[...Array(testimonial.rating)].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <blockquote class="text-gray-300 mb-6">"{testimonial.content}"</blockquote>
+              <div class="text-white font-semibold">{testimonial.author}</div>
+              <div class="text-gray-400">{testimonial.position}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to{' '}
+          <span class="gradient-text">Transform</span>
+          {' '}Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Let's discuss how our solutions can drive growth and efficiency in your organization.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-10 py-4">
+          Get Started Today
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style> 

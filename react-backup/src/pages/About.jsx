@@ -13,7 +13,7 @@ import {
   Brain,
   Zap
 } from 'lucide-react'
-import avatar from 'D:/ARAK/freelance-UIUX-main/assets/avatars/sarah-johnson.jpg'
+import avatar from '../../assets/avatars/sarah-johnson.jpg'
 
 const About = () => {
   const [journeyRef, journeyInView] = useInView({ triggerOnce: true, threshold: 0.3 })

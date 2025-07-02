@@ -1,0 +1,121 @@
+<div class="fixed inset-0 bg-dark-950 flex items-center justify-center z-50">
+  <div class="text-center">
+    <div class="mb-8">
+      <div class="relative">
+        <div class="w-24 h-24 mx-auto border-4 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+        <div class="absolute inset-0 flex items-center justify-center animate-pulse">
+          <img src="/assets/vite.svg" alt="Fugeniz Logo" class="w-12 h-12 object-contain" />
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="text-3xl font-bold text-white mb-4 animate-fade-up">
+      Fugeniz
+    </h1>
+    
+    <p class="text-primary-400 text-lg mb-8 animate-fade-up" style="animation-delay: 0.2s">
+      So real, you'll forget Artificial
+    </p>
+    
+    <div class="h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full w-0 animate-expand" style="animation-delay: 0.4s"></div>
+    
+    <div class="flex justify-center space-x-4 mt-8 opacity-0 animate-fade-in" style="animation-delay: 0.6s">
+      <div class="animate-bounce" style="animation-delay: 0s">
+        <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <div class="animate-bounce" style="animation-delay: 0.3s">
+        <svg class="w-6 h-6 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <div class="animate-bounce" style="animation-delay: 0.6s">
+        <img src="/assets/vite.svg" alt="Fugeniz Logo" class="w-6 h-6 object-contain" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-expand {
+    animation: expand 1s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes expand {
+    from {
+      width: 0;
+    }
+    to {
+      width: 200px;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-spin {
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+</style> 
