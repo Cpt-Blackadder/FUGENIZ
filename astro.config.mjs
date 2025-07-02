@@ -14,7 +14,7 @@ export default defineConfig({
       lastmod: new Date(),
     })
   ],
-  site: 'https://fugeniz.vercel.app',
+  site: 'https://fugeniz.com',
   build: {
     inlineStylesheets: 'auto'
   }
