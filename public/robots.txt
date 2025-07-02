@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of administrative paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*?*
+
+# Allow crawling of sitemap
+Allow: /sitemap.xml
+Allow: /sitemap-*.xml
+
+# Sitemaps
+Sitemap: https://fugeniz.com/sitemap-index.xml
+Sitemap: https://fugeniz.com/sitemap-0.xml
+
+# Crawl-delay
+Crawl-delay: 10 

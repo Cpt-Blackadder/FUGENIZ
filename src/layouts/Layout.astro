@@ -2,45 +2,121 @@
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Fugeniz - Empowering businesses with Fugen Intelligence (FI) for transformative growth. So real, you'll forget Artificial." } = Astro.props;
+const { 
+  title, 
+  description = "Fugeniz - Empowering businesses with Fugen Intelligence (FI) for transformative growth. So real, you'll forget Artificial.",
+  image = "/og-image.jpg"
+} = Astro.props;
 
 import LoadingScreen from '../components/LoadingScreen.astro';
+import SEO from '../components/SEO.astro';
+import PreloadAssets from '../components/PreloadAssets.astro';
 
 // Check if this is the home page
 const isHomePage = Astro.url.pathname === '/';
+
+// Font preload URLs
+const fontUrls = {
+  inter: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+  poppins: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
+  jetbrains: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap'
+};
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content="AI, artificial intelligence, business solutions, digital transformation, automation, data solutions" />
-    <meta name="author" content="Fugeniz" />
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fugeniz.com/" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.jpg" />
+    <SEO 
+      title={title}
+      description={description}
+      image={image}
+    />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://fugeniz.com/" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/og-image.jpg" />
+    <PreloadAssets />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <title>{title}</title>
+    <!-- Preload critical fonts -->
+    <link 
+      rel="preload" 
+      href={fontUrls.inter} 
+      as="style" 
+      crossorigin="anonymous"
+    />
+    <link 
+      rel="preload" 
+      href={fontUrls.poppins} 
+      as="style" 
+      crossorigin="anonymous"
+    />
+
+    <!-- Load fonts with display swap -->
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.inter} 
+      media="print" 
+      onload="this.media='all'"
+    />
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.poppins} 
+      media="print" 
+      onload="this.media='all'"
+    />
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.jetbrains} 
+      media="print" 
+      onload="this.media='all'"
+    />
+
+    <!-- Font fallback to prevent layout shift -->
+    <style is:inline>
+      /* Fallback fonts with similar metrics */
+      @font-face {
+        font-family: 'Inter-fallback';
+        size-adjust: 107%;
+        src: local('Arial');
+      }
+      
+      @font-face {
+        font-family: 'Poppins-fallback';
+        size-adjust: 112%;
+        src: local('Helvetica');
+      }
+      
+      @font-face {
+        font-family: 'JetBrains-Mono-fallback';
+        size-adjust: 105%;
+        src: local('Courier New');
+      }
+      
+      :root {
+        --font-inter: Inter, 'Inter-fallback', system-ui, -apple-system, sans-serif;
+        --font-poppins: Poppins, 'Poppins-fallback', system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', 'JetBrains-Mono-fallback', monospace;
+      }
+      
+      body {
+        font-family: var(--font-inter);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-poppins);
+      }
+      
+      code, pre {
+        font-family: var(--font-mono);
+      }
+    </style>
+
+    <!-- Noscript fallback for fonts -->
+    <noscript>
+      <link rel="stylesheet" href={fontUrls.inter} />
+      <link rel="stylesheet" href={fontUrls.poppins} />
+      <link rel="stylesheet" href={fontUrls.jetbrains} />
+    </noscript>
   </head>
   <body>
     {isHomePage && (
