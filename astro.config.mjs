@@ -14,7 +14,8 @@ export default defineConfig({
       lastmod: new Date(),
     })
   ],
-  site: 'https://fugeniz.com',
+  site: 'https://arak-047.github.io',
+  base: '/fugeniz',
   build: {
     inlineStylesheets: 'auto'
   }
