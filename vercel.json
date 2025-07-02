@@ -1,8 +1,8 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install --force",
-  "framework": null,
+  "installCommand": "npm install",
+  "framework": "astro",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
