@@ -1,195 +1,107 @@
-# Fugeniz Portfolio Website
+# FUGENIZ Website
 
-A modern, dynamic portfolio website for Fugeniz - "So real, you'll forget Artificial." Built with React, Tailwind CSS, and Framer Motion.
+A modern, responsive website for Fugeniz built with Astro and TailwindCSS.
 
 ## 🚀 Features
 
-- **Modern Design**: Futuristic dark theme with gradient accents
-- **Responsive**: Mobile-first design that works on all devices
-- **Animations**: Smooth animations and transitions using Framer Motion
-- **Interactive**: Animated world map, testimonial slider, and dynamic components
-- **Performance**: Optimized with Vite and lazy loading
-- **SEO Ready**: Meta tags, structured data, and semantic HTML
+- ⚡️ Built with Astro for optimal performance
+- 💅 Styled with TailwindCSS
+- 📱 Fully responsive design
+- 📧 Contact form integration with Web3Forms
+- 🌙 Dark mode support
+- 🎨 Modern UI with animations and transitions
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18, Vite
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Routing**: React Router DOM
-- **Counters**: React CountUp
-- **Sliders**: React Slick
+- [Astro](https://astro.build) - The web framework for content-driven websites
+- [TailwindCSS](https://tailwindcss.com) - A utility-first CSS framework
+- [Web3Forms](https://web3forms.com) - Form backend service
 
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd freelance-UIUX-main
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-src/
-├── components/          # Reusable components
-│   ├── LoadingScreen.jsx
-│   ├── Navbar.jsx
-│   ├── Footer.jsx
-│   ├── WorldMap.jsx
-│   └── TestimonialSlider.jsx
-├── pages/              # Page components
-│   ├── Home.jsx
-│   ├── About.jsx
-│   ├── Services.jsx
-│   ├── WhyUs.jsx
-│   ├── CaseStudies.jsx
-│   └── Contact.jsx
-├── App.jsx             # Main app component
-├── main.jsx           # Entry point
-└── index.css          # Global styles
+FUGENIZ/
+├── src/
+│   ├── components/
+│   │   ├── Footer.astro
+│   │   ├── LoadingScreen.astro
+│   │   └── Navbar.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── about.astro
+│   │   ├── case-studies.astro
+│   │   ├── contact.astro
+│   │   ├── index.astro
+│   │   ├── services.astro
+│   │   └── why-us.astro
+│   └── styles/
+│       └── global.css
+├── public/
+│   └── assets/
+├── astro.config.mjs
+├── tailwind.config.js
+└── package.json
 ```
 
-## 🎨 Customization
+## 🚀 Getting Started
 
-### Colors
-The color scheme is defined in `tailwind.config.js`:
-- **Primary**: Blue gradient (#0ea5e9)
-- **Secondary**: Purple gradient (#d946ef)
-- **Accent**: Green gradient (#22c55e)
-- **Dark**: Slate grays (#0f172a to #64748b)
-
-### Fonts
-- **Sans**: Inter (body text)
-- **Display**: Poppins (headings)
-- **Mono**: JetBrains Mono (code)
-
-## 📸 Asset Replacement Guide
-
-### Required Assets to Replace
-
-| Placeholder Path | What to Replace With | File Type | Purpose |
-|------------------|---------------------|-----------|---------|
-| `/avatars/sarah-johnson.jpg` | Sarah Johnson's photo | JPG/PNG | Testimonial avatar |
-| `/avatars/michael-chen.jpg` | Michael Chen's photo | JPG/PNG | Testimonial avatar |
-| `/avatars/emma-rodriguez.jpg` | Emma Rodriguez's photo | JPG/PNG | Testimonial avatar |
-| `/avatars/david-thompson.jpg` | David Thompson's photo | JPG/PNG | Testimonial avatar |
-| `/logos/techflow.png` | TechFlow Solutions logo | PNG/SVG | Client logo |
-| `/logos/globaltrade.png` | Global Trade Corp logo | PNG/SVG | Client logo |
-| `/logos/retailinnovations.png` | Retail Innovations logo | PNG/SVG | Client logo |
-| `/logos/maritimesolutions.png` | Maritime Solutions logo | PNG/SVG | Client logo |
-| `/logos/datadynamics.png` | Data Dynamics logo | PNG/SVG | Client logo |
-| `/logos/cloudsystems.png` | Cloud Systems logo | PNG/SVG | Client logo |
-| `/case-studies/trade-portal-dashboard.jpg` | Trade portal dashboard mockup | JPG/PNG | Case study visualization |
-| `/case-studies/inventory-dashboard.jpg` | Inventory dashboard mockup | JPG/PNG | Case study visualization |
-| `/case-studies/analytics-dashboard.jpg` | Analytics dashboard mockup | JPG/PNG | Case study visualization |
-| `/og-image.jpg` | Open Graph image | JPG/PNG | Social media sharing |
-| `/vite.svg` | Fugeniz favicon | SVG | Browser tab icon |
-
-### Optional Assets
-
-| Placeholder Path | What to Replace With | File Type | Purpose |
-|------------------|---------------------|-----------|---------|
-| `/hero-bg.jpg` | Hero background image | JPG/PNG | Home page background |
-| `/about-bg.jpg` | About page background | JPG/PNG | About page background |
-| `/services-bg.jpg` | Services page background | JPG/PNG | Services page background |
-| `/team-photos/` | Team member photos | JPG/PNG | About page team section |
-
-### Asset Specifications
-
-#### Images
-- **Avatars**: 200x200px, square format
-- **Logos**: 300x150px, transparent background preferred
-- **Dashboard Mockups**: 800x600px, modern UI design
-- **Background Images**: 1920x1080px, dark/neutral tones
-- **OG Image**: 1200x630px, branded design
-
-#### Icons
-- **Favicon**: 32x32px, SVG format preferred
-- **Social Icons**: 24x24px, consistent style
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file for any API keys or configuration:
-
-```env
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-VITE_CONTACT_FORM_ENDPOINT=your_form_endpoint
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd FUGENIZ
 ```
 
-### Contact Form
-The contact form currently uses a simulated submission. To connect to a real backend:
-
-1. Update the `handleSubmit` function in `Contact.jsx`
-2. Add your form submission endpoint
-3. Handle success/error responses
-
-### Analytics
-Add Google Analytics or other tracking:
-
-```javascript
-// In index.html
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+2. Install dependencies:
+```bash
+npm install
 ```
 
-## 🚀 Deployment
+3. Start the development server:
+```bash
+npm run dev
+```
 
-### Vercel (Recommended)
-1. Connect your GitHub repository
-2. Vercel will auto-detect Vite configuration
-3. Deploy with one click
+4. Build for production:
+```bash
+npm run build
+```
 
-### Netlify
-1. Build the project: `npm run build`
-2. Upload the `dist` folder
-3. Configure redirects for React Router
+## 📝 Recent Updates
 
-### Other Platforms
-The built files in the `dist` folder can be deployed to any static hosting service.
+- Converted the entire website from React to Astro for better performance
+- Implemented contact form with Web3Forms integration
+- Added form validation and error handling
+- Improved responsive design
+- Added loading states and user feedback
+- Enhanced error handling with development debugging support
 
-## 📱 Browser Support
+## 📞 Contact Form
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+The contact form is integrated with Web3Forms and includes:
+- Form validation
+- Loading states
+- Success/error messages
+- Spam protection
+- Development debugging mode
+- Production-ready error handling
 
-## 🤝 Contributing
+## 🔄 Development vs Production
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+The website includes special debugging features in development mode that are automatically disabled in production:
+- Detailed console logging
+- Debug mode for form submissions
+- Extended error messages
+
+These features help with local development but are automatically removed in the production build.
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+[Add your license information here]
 
-## 📞 Support
+## 👥 Contact
 
-For support or questions:
-- Email: contact@fugeniz.com
-- LinkedIn: [Fugeniz](https://linkedin.com/company/fugeniz)
-- WhatsApp: +91 98765 43210
-
----
-
-**Fugeniz** - So real, you'll forget Artificial.
+For any inquiries, please reach out through:
+- Email: ananthu2399@gmail.com
+- Phone: +91 7012813115
+- LinkedIn: www.linkedin.com/in/a-r-ananthu

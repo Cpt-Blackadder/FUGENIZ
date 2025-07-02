@@ -1,0 +1,158 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  description = "Fugeniz - Empowering businesses with Fugen Intelligence (FI) for transformative growth. So real, you'll forget Artificial.",
+  image = "/og-image.jpg"
+} = Astro.props;
+
+import LoadingScreen from '../components/LoadingScreen.astro';
+import SEO from '../components/SEO.astro';
+import PreloadAssets from '../components/PreloadAssets.astro';
+
+// Check if this is the home page
+const isHomePage = Astro.url.pathname === '/';
+
+// Font preload URLs
+const fontUrls = {
+  inter: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+  poppins: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
+  jetbrains: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap'
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEO 
+      title={title}
+      description={description}
+      image={image}
+    />
+
+    <PreloadAssets />
+
+    <!-- Preload critical fonts -->
+    <link 
+      rel="preload" 
+      href={fontUrls.inter} 
+      as="style" 
+      crossorigin="anonymous"
+    />
+    <link 
+      rel="preload" 
+      href={fontUrls.poppins} 
+      as="style" 
+      crossorigin="anonymous"
+    />
+
+    <!-- Load fonts with display swap -->
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.inter} 
+      media="print" 
+      onload="this.media='all'"
+    />
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.poppins} 
+      media="print" 
+      onload="this.media='all'"
+    />
+    <link 
+      rel="stylesheet" 
+      href={fontUrls.jetbrains} 
+      media="print" 
+      onload="this.media='all'"
+    />
+
+    <!-- Font fallback to prevent layout shift -->
+    <style is:inline>
+      /* Fallback fonts with similar metrics */
+      @font-face {
+        font-family: 'Inter-fallback';
+        size-adjust: 107%;
+        src: local('Arial');
+      }
+      
+      @font-face {
+        font-family: 'Poppins-fallback';
+        size-adjust: 112%;
+        src: local('Helvetica');
+      }
+      
+      @font-face {
+        font-family: 'JetBrains-Mono-fallback';
+        size-adjust: 105%;
+        src: local('Courier New');
+      }
+      
+      :root {
+        --font-inter: Inter, 'Inter-fallback', system-ui, -apple-system, sans-serif;
+        --font-poppins: Poppins, 'Poppins-fallback', system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', 'JetBrains-Mono-fallback', monospace;
+      }
+      
+      body {
+        font-family: var(--font-inter);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-poppins);
+      }
+      
+      code, pre {
+        font-family: var(--font-mono);
+      }
+    </style>
+
+    <!-- Noscript fallback for fonts -->
+    <noscript>
+      <link rel="stylesheet" href={fontUrls.inter} />
+      <link rel="stylesheet" href={fontUrls.poppins} />
+      <link rel="stylesheet" href={fontUrls.jetbrains} />
+    </noscript>
+  </head>
+  <body>
+    {isHomePage && (
+      <div id="loading-screen">
+        <LoadingScreen />
+      </div>
+    )}
+    <div class="App min-h-screen bg-dark-950">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
+
+<script>
+  // Only run loading screen logic if it exists
+  const loadingScreen = document.getElementById('loading-screen');
+  if (loadingScreen) {
+    // Show loading screen for a shorter duration (1.5 seconds)
+    setTimeout(() => {
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 300); // Faster fade out
+    }, 1500);
+  }
+</script>
+
+<style>
+  #loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    transition: opacity 0.3s ease-out;
+  }
+</style> 

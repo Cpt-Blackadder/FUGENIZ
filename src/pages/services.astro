@@ -1,0 +1,545 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const techSolutions = [
+  {
+    icon: null,
+    title: 'Intelligent Agents',
+    description: 'AI-powered autonomous agents that handle complex business processes and decision-making.',
+    features: ['Process Automation', 'Smart Decision Making', '24/7 Operation', 'Learning Capabilities'],
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: 'chat',
+    title: 'Conversational AI',
+    description: 'Advanced chatbots and virtual assistants that understand context and provide intelligent responses.',
+    features: ['Natural Language Processing', 'Multi-language Support', 'Integration Ready', 'Analytics Dashboard'],
+    color: 'from-green-500 to-green-600'
+  },
+  {
+    icon: 'trending',
+    title: 'Predictive Analytics',
+    description: 'Machine learning models that forecast trends and identify opportunities in your data.',
+    features: ['Trend Forecasting', 'Risk Assessment', 'Real-time Insights', 'Custom Models'],
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    icon: 'eye',
+    title: 'Computer Vision',
+    description: 'Visual AI solutions for image recognition, quality control, and automated inspection.',
+    features: ['Image Recognition', 'Quality Control', 'Object Detection', 'Video Analysis'],
+    color: 'from-orange-500 to-orange-600'
+  }
+];
+
+const dataSolutions = [
+  {
+    icon: 'database',
+    title: 'Data Warehousing',
+    description: 'Scalable data infrastructure that consolidates and organizes your business information.',
+    features: ['Centralized Storage', 'Real-time Processing', 'Scalable Architecture', 'Security Compliance'],
+    color: 'from-indigo-500 to-indigo-600'
+  },
+  {
+    icon: 'chart',
+    title: 'Interactive Dashboards',
+    description: 'Real-time visualization tools that transform complex data into actionable insights.',
+    features: ['Real-time Updates', 'Custom Visualizations', 'Mobile Responsive', 'Drill-down Capabilities'],
+    color: 'from-teal-500 to-teal-600'
+  },
+  {
+    icon: 'search',
+    title: 'Data Scraping',
+    description: 'Intelligent data extraction from multiple sources for comprehensive market intelligence.',
+    features: ['Multi-source Extraction', 'Structured Output', 'Scheduled Updates', 'Error Handling'],
+    color: 'from-cyan-500 to-cyan-600'
+  },
+  {
+    icon: 'target',
+    title: 'Inventory Optimization',
+    description: 'AI-driven inventory management that reduces costs while maintaining service levels.',
+    features: ['Demand Forecasting', 'Stock Optimization', 'Cost Reduction', 'Service Level Maintenance'],
+    color: 'from-pink-500 to-pink-600'
+  }
+];
+
+const digitalTransformation = [
+  {
+    icon: 'settings',
+    title: 'Process Re-engineering',
+    description: 'Complete redesign of business processes for maximum efficiency and effectiveness.',
+    features: ['Process Analysis', 'Workflow Design', 'Implementation Support', 'Performance Monitoring'],
+    color: 'from-red-500 to-red-600'
+  },
+  {
+    icon: 'cloud',
+    title: 'Cloud Migration',
+    description: 'Seamless transition to cloud infrastructure with minimal disruption to operations.',
+    features: ['Migration Planning', 'Data Security', 'Performance Optimization', 'Ongoing Support'],
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: 'cpu',
+    title: 'RPA Implementation',
+    description: 'Robotic Process Automation to eliminate repetitive tasks and increase productivity.',
+    features: ['Task Automation', 'Integration Capabilities', 'Monitoring Tools', 'Scalable Solutions'],
+    color: 'from-green-500 to-green-600'
+  },
+  {
+    icon: 'code',
+    title: 'Custom Applications',
+    description: 'Tailored software solutions designed specifically for your business needs.',
+    features: ['Custom Development', 'API Integration', 'User Training', 'Maintenance Support'],
+    color: 'from-purple-500 to-purple-600'
+  }
+];
+
+const tradeTech = [
+  {
+    icon: 'globe',
+    title: 'Trade Portals',
+    description: 'Comprehensive B2B platforms that connect buyers and sellers globally.',
+    features: ['Multi-language Support', 'Payment Integration', 'Document Management', 'Analytics Dashboard'],
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: 'file',
+    title: 'Automated Documentation',
+    description: 'AI-powered document processing and generation for trade compliance.',
+    features: ['Document Generation', 'Compliance Checking', 'Multi-format Support', 'Version Control'],
+    color: 'from-green-500 to-green-600'
+  },
+  {
+    icon: 'users',
+    title: 'Sourcing Platforms',
+    description: 'Intelligent supplier discovery and management systems.',
+    features: ['Supplier Discovery', 'Quality Assessment', 'Performance Tracking', 'Communication Tools'],
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    icon: 'chart',
+    title: 'Trade Intelligence',
+    description: 'Real-time market insights and competitive intelligence dashboards.',
+    features: ['Market Analysis', 'Competitor Tracking', 'Price Monitoring', 'Trend Forecasting'],
+    color: 'from-orange-500 to-orange-600'
+  }
+];
+
+const tabs = [
+  { id: 'tech', name: 'Tech Solutions' },
+  { id: 'trade', name: 'Trade Tech' }
+];
+---
+
+<Layout title="Our Services - Fugeniz" description="Comprehensive AI and technology solutions for business transformation.">
+  <Navbar />
+  
+  <main class="min-h-screen pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center animate-fade-up">
+          <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+            Comprehensive{' '}
+            <span class="gradient-text">Solutions</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Powered by Fugen Intelligence (FI), our solutions span technology and trade, 
+            delivering transformative results across industries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Tabs -->
+    <div class="bg-dark-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border-b border-dark-700">
+          <nav class="-mb-px flex justify-center space-x-12" aria-label="Services">
+            {tabs.map((tab) => (
+              <button
+                class="tab-button relative whitespace-nowrap py-6 px-8 text-xl font-semibold transition-all duration-300 hover:text-primary-400"
+                data-tab={tab.id}
+              >
+                {tab.name}
+                <span class="tab-glow absolute inset-0 -z-10 hidden rounded-lg bg-primary-500/20 blur group-hover:bg-primary-500/30"></span>
+                <span class="tab-line absolute bottom-0 left-0 h-0.5 w-full scale-x-0 bg-gradient-to-r from-primary-500 to-secondary-500 transition-transform duration-300"></span>
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Solutions -->
+    <div class="service-section" id="tech-section">
+      <section class="py-20 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-6">
+              Tech Solutions
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+              Cutting-edge AI and technology solutions powered by Fugen Intelligence.
+            </p>
+          </div>
+
+          <!-- FI & Automation -->
+          <div class="mb-20">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">FI & Automation</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {techSolutions.map((service) => (
+                <div class="card group animate-slide-up">
+                  <div class={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {!service.icon ? (
+                      <img src="/assets/vite.svg" alt="Fugeniz Logo" class="w-8 h-8 object-contain" />
+                    ) : (
+                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {service.icon === 'chat' && (
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        )}
+                        {service.icon === 'trending' && (
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        )}
+                        {service.icon === 'eye' && (
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        )}
+                      </svg>
+                    )}
+                  </div>
+                  <h4 class="text-xl font-bold text-white mb-4">{service.title}</h4>
+                  <p class="text-gray-300 mb-6">{service.description}</p>
+                  <ul class="space-y-2">
+                    {service.features.map((feature) => (
+                      <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-primary-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Data Solutions -->
+          <div class="mb-20">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">Data Solutions</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {dataSolutions.map((service) => (
+                <div class="card group animate-slide-up">
+                  <div class={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {service.icon === 'database' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                      )}
+                      {service.icon === 'chart' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                      )}
+                      {service.icon === 'search' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                      )}
+                      {service.icon === 'target' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      )}
+                    </svg>
+                  </div>
+                  <h4 class="text-xl font-bold text-white mb-4">{service.title}</h4>
+                  <p class="text-gray-300 mb-6">{service.description}</p>
+                  <ul class="space-y-2">
+                    {service.features.map((feature) => (
+                      <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-primary-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Digital Transformation -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">Digital Transformation</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {digitalTransformation.map((service) => (
+                <div class="card group animate-slide-up">
+                  <div class={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {service.icon === 'settings' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      )}
+                      {service.icon === 'cloud' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                      )}
+                      {service.icon === 'cpu' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      )}
+                      {service.icon === 'code' && (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                      )}
+                    </svg>
+                  </div>
+                  <h4 class="text-xl font-bold text-white mb-4">{service.title}</h4>
+                  <p class="text-gray-300 mb-6">{service.description}</p>
+                  <ul class="space-y-2">
+                    {service.features.map((feature) => (
+                      <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-primary-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Trade Tech -->
+    <div class="service-section hidden" id="trade-section">
+      <section class="py-20 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-6">
+              Trade Tech
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+              Specialized solutions for international trade and commerce.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {tradeTech.map((service) => (
+              <div class="card group animate-slide-up">
+                <div class={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {service.icon === 'globe' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    )}
+                    {service.icon === 'file' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    )}
+                    {service.icon === 'users' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    )}
+                    {service.icon === 'chart' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    )}
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">{service.title}</h4>
+                <p class="text-gray-300 mb-6">{service.description}</p>
+                <ul class="space-y-2">
+                  {service.features.map((feature) => (
+                    <li class="flex items-center text-gray-300">
+                      <svg class="w-5 h-5 text-primary-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to{' '}
+          <span class="gradient-text">Transform</span>
+          {' '}Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Let's discuss how our solutions can drive growth and efficiency in your organization.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-10 py-4">
+          Get Started Today
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tab-button {
+    color: var(--color-gray-400);
+    border-color: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tab-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--color-primary-500) 0%, transparent 70%);
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+    transition: all 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .tab-button:hover::before {
+    opacity: 0.1;
+    transform: translateY(-50%) scale(1);
+  }
+
+  .tab-button.active {
+    color: var(--color-primary-500);
+  }
+
+  .tab-button.active .tab-line {
+    transform: scaleX(1);
+  }
+
+  .tab-button.active::before {
+    opacity: 0.15;
+    transform: translateY(-50%) scale(1);
+  }
+
+  .tab-button:hover .tab-glow {
+    display: block;
+  }
+
+  .tab-button.active .tab-glow {
+    display: block;
+    background: var(--color-primary-500/30);
+  }
+
+  @keyframes tabPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary-500-rgb), 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(var(--color-primary-500-rgb), 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary-500-rgb), 0);
+    }
+  }
+
+  .tab-button.active {
+    animation: tabPulse 2s infinite;
+  }
+
+  .service-section {
+    display: none;
+  }
+
+  .service-section.active {
+    display: block;
+  }
+</style>
+
+<script>
+  // Handle tab switching
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const sections = document.querySelectorAll('.service-section');
+
+  function setActiveTab(tabId) {
+    // Update tab buttons with enhanced animation
+    tabButtons.forEach(button => {
+      if (button.dataset.tab === tabId) {
+        button.classList.add('active');
+        // Add smooth entrance animation for the line
+        const line = button.querySelector('.tab-line');
+        if (line) {
+          line.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+          line.style.transform = 'scaleX(1)';
+        }
+      } else {
+        button.classList.remove('active');
+        // Smooth exit animation
+        const line = button.querySelector('.tab-line');
+        if (line) {
+          line.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          line.style.transform = 'scaleX(0)';
+        }
+      }
+    });
+
+    // Update sections with enhanced animation
+    sections.forEach(section => {
+      if (section.id === `${tabId}-section`) {
+        section.classList.add('active');
+        section.classList.remove('hidden');
+        // Add entrance animation
+        section.style.animation = 'fadeIn 0.5s ease-out forwards';
+      } else {
+        // Add exit animation
+        section.style.animation = 'fadeOut 0.3s ease-out forwards';
+        setTimeout(() => {
+          section.classList.remove('active');
+          section.classList.add('hidden');
+        }, 300);
+      }
+    });
+  }
+
+  // Set initial active tab
+  setActiveTab('tech');
+
+  // Add click handlers
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      setActiveTab(button.dataset.tab);
+    });
+  });
+</script> 

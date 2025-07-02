@@ -1,0 +1,84 @@
+---
+// Define critical assets to preload
+const criticalImages = [
+  // Add your critical images here
+  '/assets/logos/FUGENIZ LOGO COLOUR PNG.png',
+  '/assets/vite.svg'
+];
+
+const criticalStyles = [
+  // Add critical stylesheets here
+];
+
+const criticalScripts = [
+  // Add critical scripts here
+];
+
+// Helper function to get file extension
+const getFileExtension = (path: string) => {
+  return path.split('.').pop()?.toLowerCase() || '';
+};
+
+// Helper function to get mime type
+const getMimeType = (ext: string) => {
+  const mimeTypes: Record<string, string> = {
+    'png': 'image/png',
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'svg': 'image/svg+xml',
+    'webp': 'image/webp',
+    'css': 'text/css',
+    'js': 'text/javascript'
+  };
+  return mimeTypes[ext] || '';
+};
+---
+
+<!-- Preconnect to critical domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- DNS Prefetch for external resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+<!-- Preload critical images -->
+{
+  criticalImages.map(path => {
+    const ext = getFileExtension(path);
+    const mimeType = getMimeType(ext);
+    return (
+      <link 
+        rel="preload" 
+        href={path} 
+        as="image" 
+        type={mimeType}
+        fetchpriority="high"
+      />
+    );
+  })
+}
+
+<!-- Preload critical styles -->
+{
+  criticalStyles.map(path => (
+    <link 
+      rel="preload" 
+      href={path} 
+      as="style"
+      crossorigin="anonymous"
+    />
+  ))
+}
+
+<!-- Preload critical scripts -->
+{
+  criticalScripts.map(path => (
+    <link 
+      rel="preload" 
+      href={path} 
+      as="script"
+      crossorigin="anonymous"
+    />
+  ))
+} 

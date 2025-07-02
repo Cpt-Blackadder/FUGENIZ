@@ -1,0 +1,357 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const stats = [
+  { icon: 'users', value: 150, label: 'Global Clients', suffix: '+' },
+  { icon: 'award', value: 8, label: 'Years Experience', suffix: '+' },
+  { icon: 'clock', value: 24, label: 'Hours Support', suffix: '/7' },
+  { icon: 'brain', value: 95, label: 'Success Rate', suffix: '%' },
+];
+
+const featuredServices = [
+  {
+    icon: 'brain',
+    title: 'FI & Automation',
+    description: 'Intelligent agents and conversational AI for seamless business automation.',
+    color: 'from-primary-500 to-primary-600'
+  },
+  {
+    icon: 'globe',
+    title: 'Data Solutions',
+    description: 'Comprehensive data warehousing, analytics, and optimization solutions.',
+    color: 'from-secondary-500 to-secondary-600'
+  },
+  {
+    icon: 'zap',
+    title: 'Digital Transformation',
+    description: 'End-to-end process re-engineering and cloud migration services.',
+    color: 'from-accent-500 to-accent-600'
+  }
+];
+---
+
+<Layout title="Fugeniz - So real, you'll forget Artificial">
+  <Navbar />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 hero-pattern opacity-30"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="space-y-8">
+          <!-- Tagline -->
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight animate-fade-in">
+            So real, you'll{' '}
+            <span class="gradient-text">forget</span>
+            <br />
+            <span class="text-primary-400">Artificial</span>
+          </h1>
+
+          <!-- Subheading -->
+          <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+            Empowering businesses with{' '}
+            <span class="text-primary-400 font-semibold">Fugen Intelligence (FI)</span>{' '}
+            for transformative growth across global markets.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+            <a
+              href="/contact"
+              class="btn-primary text-lg px-10 py-4 flex items-center justify-center whitespace-nowrap"
+              style="min-width: max-content;"
+            >
+              <span class="flex items-center">
+                Let's Build the Future Together
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </a>
+            <a
+              href="/services"
+              class="btn-secondary text-lg px-10 py-4 flex items-center justify-center whitespace-nowrap"
+              style="min-width: max-content;"
+            >
+              Explore Our Solutions
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in">
+        <div class="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center animate-bounce-slow">
+          <div class="w-1 h-3 bg-primary-400 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Showcase Section -->
+    <section class="py-16 bg-dark-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Text Content -->
+          <div class="space-y-8 animate-slide-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">
+              Powering the Future with
+              <span class="gradient-text block mt-2">AI & Trade Tech</span>
+            </h2>
+            <p class="text-xl text-gray-300 leading-relaxed">
+              Our cutting-edge solutions combine artificial intelligence with deep trade expertise,
+              delivering transformative results for businesses worldwide.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-white">Advanced AI Integration</h3>
+                  <p class="text-gray-400 mt-2">Smart algorithms and machine learning solutions that adapt to your business needs.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-white">Global Trade Solutions</h3>
+                  <p class="text-gray-400 mt-2">Seamless international trade operations with intelligent automation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Grid -->
+          <div class="grid grid-cols-2 gap-4 animate-fade-in">
+            <div class="space-y-4">
+              <div class="bg-gradient-to-br from-primary-500/20 to-secondary-500/20 p-4 rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                <div class="w-full h-40 rounded-xl bg-dark-800/50 flex items-center justify-center group">
+                  <!-- Modern AI Circuit SVG -->
+                  <svg class="w-24 h-24 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="3" class="animate-pulse"/>
+                    <path d="M12 3v1.5M12 19.5V21M18.364 5.636l-1.06 1.06M6.696 17.304l-1.06 1.06M21 12h-1.5M4.5 12H3M17.304 17.304l1.06 1.06M5.636 5.636l1.06 1.06M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="1.5"/>
+                    <path d="M8 12s2-2 4-2 4 2 4 2" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300" stroke-width="1.5"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="bg-gradient-to-br from-secondary-500/20 to-accent-500/20 p-4 rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                <div class="w-full h-48 rounded-xl bg-dark-800/50 flex items-center justify-center group">
+                  <!-- Modern Analytics SVG -->
+                  <svg class="w-28 h-28 text-secondary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path class="animate-chart-grow" d="M7 20V8m5 12V4m5 16v-6" stroke-width="2" stroke-linecap="round"/>
+                    <path class="opacity-0 group-hover:opacity-100 transition-opacity duration-300" d="M4 14l3-3 5 5 8-8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 mt-8">
+              <div class="bg-gradient-to-br from-accent-500/20 to-primary-500/20 p-4 rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                <div class="w-full h-48 rounded-xl bg-dark-800/50 flex items-center justify-center group">
+                  <!-- Modern Network Globe SVG -->
+                  <svg class="w-28 h-28 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="8" stroke-width="1.5" class="animate-spin-slow"/>
+                    <path d="M12 4c-1.657 0-3 5.373-3 12s1.343 12 3 12 3-5.373 3-12-1.343-12-3-12z" stroke-width="1.5" class="rotate-90"/>
+                    <path d="M4.34 7.322C7.273 10.5 12 10.5 12 10.5s4.727 0 7.66-3.178M4.34 16.678C7.273 13.5 12 13.5 12 13.5s4.727 0 7.66 3.178" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="2" class="fill-current opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-4 rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                <div class="w-full h-40 rounded-xl bg-dark-800/50 flex items-center justify-center group">
+                  <!-- Modern Innovation SVG -->
+                  <svg class="w-24 h-24 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707" stroke-width="1.5"/>
+                    <path d="M12 4a6 6 0 00-6 6c0 2 1 3.5 2 4.5s2 2 2 3h4c0-1 1-2 2-3s2-2.5 2-4.5a6 6 0 00-6-6z" stroke-width="1.5" class="animate-glow"/>
+                    <path d="M10 19a2 2 0 104 0" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300" stroke-width="1.5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-20 bg-dark-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Dual Expertise,{' '}
+            <span class="gradient-text">Global Impact</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            We combine cutting-edge IT expertise with deep industry domain knowledge 
+            to deliver solutions that drive real business transformation.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div class="text-center animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+              <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                {stat.icon === 'users' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                  </svg>
+                )}
+                {stat.icon === 'award' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                )}
+                {stat.icon === 'clock' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                )}
+                {stat.icon === 'brain' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                )}
+              </div>
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">
+                <span class="counter" data-target={stat.value}>{stat.value}</span>{stat.suffix}
+              </div>
+              <p class="text-gray-400">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="py-20 bg-dark-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Our{' '}
+            <span class="gradient-text">Core Services</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Comprehensive solutions designed to transform your business operations 
+            and drive sustainable growth.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {featuredServices.map((service, index) => (
+            <div class="card group animate-slide-up" style={`animation-delay: ${index * 0.2}s`}>
+              <div class={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                {service.icon === 'brain' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                )}
+                {service.icon === 'globe' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                )}
+                {service.icon === 'zap' && (
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                )}
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">{service.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  
+  const animateCounter = (counter) => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const step = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      counter.textContent = Math.floor(current);
+    }, 16);
+  };
+
+  // Intersection Observer for counters
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        animateCounter(counter);
+        observer.unobserve(counter);
+      }
+    });
+  }, observerOptions);
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+</script>
+
+<style>
+  @keyframes chart-grow {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  .animate-chart-grow {
+    animation: chart-grow 1.5s ease-out forwards;
+    transform-origin: bottom;
+  }
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  @keyframes glow {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 4px currentColor);
+    }
+    50% {
+      opacity: 0.6;
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style> 
