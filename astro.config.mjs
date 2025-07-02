@@ -5,6 +5,15 @@ import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',  // Ensure static output
+  adapter: vercel({
+    analytics: true,  // Enable Vercel Analytics
+    imageService: true,  // Enable Vercel Image Optimization
+    devImageService: 'sharp',  // Use sharp for local development
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [
     tailwind(),
     sitemap({
@@ -15,11 +24,10 @@ export default defineConfig({
       lastmod: new Date(), // Use current date for lastmod
     })
   ],
-  output: 'static',
-  adapter: vercel(),
   site: 'https://fugeniz.com',
   base: '/',
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    inlineStylesheets: 'auto'  // Optimize CSS loading
   }
 }); 
