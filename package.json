@@ -14,7 +14,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "@astrojs/vercel": "^7.8.2",
     "astro": "^4.0.0",
-    "sharp": "^0.34.2"
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.0.0",
@@ -31,5 +31,8 @@
     "technology"
   ],
   "author": "Fugeniz",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

@@ -1,12 +1,17 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm install --force",
   "framework": "astro",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "github": {
     "silent": true
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=4096"
+    }
   }
 } 
